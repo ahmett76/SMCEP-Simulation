@@ -70,7 +70,7 @@ Running the script is intended to:
 
 ### Performance Trajectories
 
-![SMCEP v0.5 Performance Trajectories](smcep_trajectory.png)
+![SMCEP v0.5 Performance Trajectories](smcep_historical_trajectory)
 
 The visualization compares the four illustrative groups across 50 generations. The dotted vertical marker at generation 12 identifies the predefined transition point for Group D.
 
