@@ -1,0 +1,300 @@
+{
+  "parameters": {
+    "seeds": 12,
+    "generations": 25,
+    "candidates": 6,
+    "probes": 12,
+    "policy_weight": 1.0,
+    "out": "/mnt/data/smcep_v09"
+  },
+  "groups": {
+    "A": [
+      "none",
+      false,
+      0.015
+    ],
+    "B": [
+      "restricted",
+      false,
+      0.015
+    ],
+    "C": [
+      "broad",
+      true,
+      0.015
+    ],
+    "D": [
+      "broad",
+      true,
+      0.12
+    ],
+    "E_scope": [
+      "broad",
+      false,
+      0.015
+    ],
+    "E_policy": [
+      "restricted",
+      true,
+      0.015
+    ]
+  },
+  "summary": [
+    {
+      "group": "A",
+      "delta_P": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "delta_C_id": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "delta_C_ood": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "accept_rate": 0.0,
+      "false_accept_given_accept": null,
+      "mean_F_id_on_accept": null,
+      "mean_F_ood_on_accept": null
+    },
+    {
+      "group": "B",
+      "delta_P": {
+        "mean": 0.0610908003941393,
+        "sd": 0.014257178871831326,
+        "ci95_low": 0.053024042055793565,
+        "ci95_high": 0.06915755873248502
+      },
+      "delta_C_id": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "delta_C_ood": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "accept_rate": 0.7533333333333333,
+      "false_accept_given_accept": 0.3053097345132743,
+      "mean_F_id_on_accept": 0.0,
+      "mean_F_ood_on_accept": 0.0
+    },
+    {
+      "group": "C",
+      "delta_P": {
+        "mean": 0.06658238529337569,
+        "sd": 0.027730945228645807,
+        "ci95_low": 0.050892125974587095,
+        "ci95_high": 0.0822726446121643
+      },
+      "delta_C_id": {
+        "mean": -0.00707836715511451,
+        "sd": 0.00943362372755947,
+        "ci95_low": -0.01241594224968381,
+        "ci95_high": -0.001740792060545211
+      },
+      "delta_C_ood": {
+        "mean": -0.027771787464271478,
+        "sd": 0.03899497111653634,
+        "ci95_low": -0.04983526939402194,
+        "ci95_high": -0.005708305534521018
+      },
+      "accept_rate": 0.5466666666666666,
+      "false_accept_given_accept": 0.29878048780487804,
+      "mean_F_id_on_accept": -0.0005179293040327691,
+      "mean_F_ood_on_accept": -0.0020320820095808398
+    },
+    {
+      "group": "D",
+      "delta_P": {
+        "mean": -0.05380420409226219,
+        "sd": 0.0707798699874181,
+        "ci95_low": -0.0938516855428959,
+        "ci95_high": -0.013756722641628485
+      },
+      "delta_C_id": {
+        "mean": -0.02081224397979928,
+        "sd": 0.03037617792522003,
+        "ci95_low": -0.037999184591835475,
+        "ci95_high": -0.0036253033677630837
+      },
+      "delta_C_ood": {
+        "mean": -0.01912096374521455,
+        "sd": 0.037347508763904386,
+        "ci95_low": -0.04025230609884861,
+        "ci95_high": 0.002010378608419513
+      },
+      "accept_rate": 0.88,
+      "false_accept_given_accept": 0.5189393939393939,
+      "mean_F_id_on_accept": -0.0009460110899908766,
+      "mean_F_ood_on_accept": -0.0008691347156915706
+    },
+    {
+      "group": "E_scope",
+      "delta_P": {
+        "mean": 0.07301791538868041,
+        "sd": 0.023640261217899944,
+        "ci95_low": 0.05964217843437016,
+        "ci95_high": 0.08639365234299066
+      },
+      "delta_C_id": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "delta_C_ood": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "accept_rate": 0.5766666666666667,
+      "false_accept_given_accept": 0.23121387283236994,
+      "mean_F_id_on_accept": 0.0,
+      "mean_F_ood_on_accept": 0.0
+    },
+    {
+      "group": "E_policy",
+      "delta_P": {
+        "mean": 0.05701811523797007,
+        "sd": 0.020485239283882465,
+        "ci95_low": 0.045427499991305895,
+        "ci95_high": 0.06860873048463424
+      },
+      "delta_C_id": {
+        "mean": -0.014159304784168346,
+        "sd": 0.020018987008844167,
+        "ci95_low": -0.025486112971858953,
+        "ci95_high": -0.0028324965964777408
+      },
+      "delta_C_ood": {
+        "mean": -0.025336078110258693,
+        "sd": 0.04850845759475024,
+        "ci95_low": -0.052782321739555244,
+        "ci95_high": 0.002110165519037855
+      },
+      "accept_rate": 0.76,
+      "false_accept_given_accept": 0.34210526315789475,
+      "mean_F_id_on_accept": -0.0007452265675878078,
+      "mean_F_ood_on_accept": -0.0013334777952767728
+    }
+  ],
+  "paired": [
+    {
+      "comparison": "D-C",
+      "metric": "P",
+      "mean": -0.12038658938563786,
+      "sd": 0.0787750803978776,
+      "ci95_low": -0.16495778698132393,
+      "ci95_high": -0.07581539178995178
+    },
+    {
+      "comparison": "D-C",
+      "metric": "C_id",
+      "mean": -0.013733876824684771,
+      "sd": 0.02988225587396552,
+      "ci95_low": -0.030641354728055493,
+      "ci95_high": 0.0031736010786859517
+    },
+    {
+      "comparison": "D-C",
+      "metric": "C_ood",
+      "mean": 0.008650823719056929,
+      "sd": 0.02850935783684823,
+      "ci95_low": -0.007479863994040209,
+      "ci95_high": 0.02478151143215407
+    },
+    {
+      "comparison": "C-B",
+      "metric": "P",
+      "mean": 0.005491584899236401,
+      "sd": 0.01761625511285133,
+      "ci95_low": -0.004475749739651079,
+      "ci95_high": 0.015458919538123882
+    },
+    {
+      "comparison": "C-B",
+      "metric": "C_id",
+      "mean": -0.00707836715511451,
+      "sd": 0.00943362372755947,
+      "ci95_low": -0.01241594224968381,
+      "ci95_high": -0.001740792060545211
+    },
+    {
+      "comparison": "C-B",
+      "metric": "C_ood",
+      "mean": -0.027771787464271478,
+      "sd": 0.03899497111653634,
+      "ci95_low": -0.04983526939402194,
+      "ci95_high": -0.005708305534521018
+    },
+    {
+      "comparison": "C-E_scope",
+      "metric": "P",
+      "mean": -0.006435530095304713,
+      "sd": 0.025554680571631204,
+      "ci95_low": -0.020894451768249167,
+      "ci95_high": 0.00802339157763974
+    },
+    {
+      "comparison": "C-E_scope",
+      "metric": "C_id",
+      "mean": -0.00707836715511451,
+      "sd": 0.00943362372755947,
+      "ci95_low": -0.01241594224968381,
+      "ci95_high": -0.001740792060545211
+    },
+    {
+      "comparison": "C-E_scope",
+      "metric": "C_ood",
+      "mean": -0.027771787464271478,
+      "sd": 0.03899497111653634,
+      "ci95_low": -0.04983526939402194,
+      "ci95_high": -0.005708305534521018
+    },
+    {
+      "comparison": "C-E_policy",
+      "metric": "P",
+      "mean": 0.00956427005540563,
+      "sd": 0.02503597158617662,
+      "ci95_low": -0.0046011643806032065,
+      "ci95_high": 0.023729704491414465
+    },
+    {
+      "comparison": "C-E_policy",
+      "metric": "C_id",
+      "mean": 0.007080937629053837,
+      "sd": 0.024830993330154368,
+      "ci95_low": -0.006968519440688382,
+      "ci95_high": 0.021130394698796056
+    },
+    {
+      "comparison": "C-E_policy",
+      "metric": "C_ood",
+      "mean": -0.00243570935401279,
+      "sd": 0.045108892534517615,
+      "ci95_low": -0.02795846797670944,
+      "ci95_high": 0.02308704926868386
+    }
+  ],
+  "limitations": [
+    "Synthetic toy agents, not real autonomous research agents",
+    "ID and OOD probes are disjoint from selection, but generated by a researcher-defined synthetic task model",
+    "Anchor-based C evaluates policy search skill, not universal future development capability",
+    "C and D selection-noise contrast is controlled; C versus B changes both scope and policy",
+    "Per-step F is matched branch effect on probe, not a causal estimate of sustained multi-generation recursion",
+    "Exploratory pilot: confidence intervals are descriptive and not multiplicity-adjusted"
+  ]
+}

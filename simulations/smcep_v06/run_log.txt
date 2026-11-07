@@ -1,0 +1,42 @@
+[
+  {
+    "group": "A",
+    "mean_final_P": 0.44595025618528794,
+    "mean_final_C": 0.04791015029787025,
+    "mean_delta_P": 0.0,
+    "mean_delta_C": 0.0,
+    "sd_delta_C": 0.0,
+    "acceptance_rate": 0.0,
+    "false_accept_rate_given_accept": 0.0
+  },
+  {
+    "group": "B",
+    "mean_final_P": 0.48846320118830805,
+    "mean_final_C": 0.021529852831119838,
+    "mean_delta_P": 0.042512945003020164,
+    "mean_delta_C": -0.0263802974667504,
+    "sd_delta_C": 0.011449628765007965,
+    "acceptance_rate": 0.9791666666666666,
+    "false_accept_rate_given_accept": 0.4425531914893617
+  },
+  {
+    "group": "C",
+    "mean_final_P": 0.35673993666521214,
+    "mean_final_C": 0.004664607449329485,
+    "mean_delta_P": -0.08921031952007576,
+    "mean_delta_C": -0.04324554284854074,
+    "sd_delta_C": 0.03488449205789821,
+    "acceptance_rate": 0.8666666666666667,
+    "false_accept_rate_given_accept": 0.46634615384615385
+  },
+  {
+    "group": "D",
+    "mean_final_P": 0.08150646527619818,
+    "mean_final_C": 0.045452995257608576,
+    "mean_delta_P": -0.3644437909090897,
+    "mean_delta_C": -0.002457155040261649,
+    "sd_delta_C": 0.02739547277258587,
+    "acceptance_rate": 0.9958333333333333,
+    "false_accept_rate_given_accept": 0.6359832635983264
+  }
+]

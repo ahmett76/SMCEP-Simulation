@@ -1,0 +1,139 @@
+{
+  "parameters": {
+    "seeds": 12,
+    "generations": 25,
+    "candidates": 6,
+    "probes": 24,
+    "out": "/mnt/data/smcep_v07"
+  },
+  "groups": {
+    "A": {
+      "scope": "none",
+      "noise": 0.015,
+      "policy": false
+    },
+    "B": {
+      "scope": "restricted",
+      "noise": 0.015,
+      "policy": false
+    },
+    "C": {
+      "scope": "broad",
+      "noise": 0.015,
+      "policy": true
+    },
+    "D": {
+      "scope": "broad",
+      "noise": 0.12,
+      "policy": true
+    },
+    "E_scope": {
+      "scope": "broad",
+      "noise": 0.015,
+      "policy": false
+    },
+    "E_policy": {
+      "scope": "restricted",
+      "noise": 0.015,
+      "policy": true
+    }
+  },
+  "summary": [
+    {
+      "group": "A",
+      "delta_P": 0.0,
+      "delta_C": 0.0,
+      "sd_delta_P": 0.0,
+      "sd_delta_C": 0.0,
+      "accept_rate": 0.0,
+      "false_accept_given_accept": 0.0,
+      "mean_F_on_accept": 0,
+      "mean_audit_gain_on_accept": 0
+    },
+    {
+      "group": "B",
+      "delta_P": 0.0650778014751304,
+      "delta_C": -0.023218573124764108,
+      "sd_delta_P": 0.018582092023566005,
+      "sd_delta_C": 0.008281868384709672,
+      "accept_rate": 0.8066666666666666,
+      "false_accept_given_accept": 0.35537190082644626,
+      "mean_F_on_accept": -0.0011513342045337575,
+      "mean_audit_gain_on_accept": 0.0032269984202544
+    },
+    {
+      "group": "C",
+      "delta_P": 0.06365402103907129,
+      "delta_C": -0.03274809425891929,
+      "sd_delta_P": 0.040310268747251,
+      "sd_delta_C": 0.005931338708284569,
+      "accept_rate": 0.5,
+      "false_accept_given_accept": 0.34,
+      "mean_F_on_accept": -0.002619847540713543,
+      "mean_audit_gain_on_accept": 0.005092321683125703
+    },
+    {
+      "group": "D",
+      "delta_P": -0.15230191347932298,
+      "delta_C": -0.0020541973768581734,
+      "sd_delta_P": 0.14720097321041917,
+      "sd_delta_C": 0.021630297081607772,
+      "accept_rate": 0.8633333333333333,
+      "false_accept_given_accept": 0.525096525096525,
+      "mean_F_on_accept": -9.517516803976065e-05,
+      "mean_audit_gain_on_accept": -0.007056459311783304
+    },
+    {
+      "group": "E_scope",
+      "delta_P": 0.06581996357528715,
+      "delta_C": -0.025177480031341178,
+      "sd_delta_P": 0.031006183274186517,
+      "sd_delta_C": 0.010283863314203586,
+      "accept_rate": 0.6033333333333334,
+      "false_accept_given_accept": 0.287292817679558,
+      "mean_F_on_accept": -0.0016692251954480342,
+      "mean_audit_gain_on_accept": 0.004363754491179259
+    },
+    {
+      "group": "E_policy",
+      "delta_P": 0.05614688524721395,
+      "delta_C": -0.030250484587254853,
+      "sd_delta_P": 0.029058829080195768,
+      "sd_delta_C": 0.008992207297349642,
+      "accept_rate": 0.73,
+      "false_accept_given_accept": 0.3972602739726027,
+      "mean_F_on_accept": -0.0016575607993016357,
+      "mean_audit_gain_on_accept": 0.0030765416573815866
+    }
+  ],
+  "paired": [
+    {
+      "comparison": "D-C",
+      "mean_final_P_difference": -0.21595593451839426,
+      "sd": 0.1314507782428112
+    },
+    {
+      "comparison": "C-B",
+      "mean_final_P_difference": -0.0014237804360591095,
+      "sd": 0.03438262737763497
+    },
+    {
+      "comparison": "C-E_scope",
+      "mean_final_P_difference": -0.0021659425362158626,
+      "sd": 0.04571325542005258
+    },
+    {
+      "comparison": "C-E_policy",
+      "mean_final_P_difference": 0.007507135791857337,
+      "sd": 0.03700344896162902
+    }
+  ],
+  "limitations": [
+    "Synthetic tasks, no LLM or real code edits",
+    "C is best-of-k improvement opportunity, not independent agent research success",
+    "F is local paired probe difference, not long-run causal recursion",
+    "A/B/C confound scope and policy; ablations are exploratory",
+    "No reward hacking mechanism, only evaluator noise",
+    "Pilot size; descriptive only, no preregistered confirmatory inference"
+  ]
+}

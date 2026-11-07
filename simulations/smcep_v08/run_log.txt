@@ -1,0 +1,114 @@
+{
+  "summary": [
+    {
+      "group": "A",
+      "delta_P": 0.0,
+      "delta_C_anchor": 0.0,
+      "sd_P": 0.0,
+      "sd_C": 0.0,
+      "accept_rate": 0.0,
+      "false_accept_given_accept": null,
+      "mean_F_on_accept": null
+    },
+    {
+      "group": "B",
+      "delta_P": 0.0650778014751304,
+      "delta_C_anchor": 0.0,
+      "sd_P": 0.018582092023566005,
+      "sd_C": 0.0,
+      "accept_rate": 0.8066666666666666,
+      "false_accept_given_accept": 0.35537190082644626,
+      "mean_F_on_accept": 0.0
+    },
+    {
+      "group": "C",
+      "delta_P": 0.060079503869386736,
+      "delta_C_anchor": -0.008841918941563153,
+      "sd_P": 0.03430880286229344,
+      "sd_C": 0.010587856180590133,
+      "accept_rate": 0.5433333333333333,
+      "false_accept_given_accept": 0.34355828220858897,
+      "mean_F_on_accept": -0.0006509388177837904
+    },
+    {
+      "group": "D",
+      "delta_P": -0.11939468242349593,
+      "delta_C_anchor": -0.014529882863088728,
+      "sd_P": 0.1275465623085049,
+      "sd_C": 0.013552881259587209,
+      "accept_rate": 0.8933333333333333,
+      "false_accept_given_accept": 0.5223880597014925,
+      "mean_F_on_accept": -0.0006505917699890475
+    },
+    {
+      "group": "E_scope",
+      "delta_P": 0.06581996357528715,
+      "delta_C_anchor": 0.0,
+      "sd_P": 0.031006183274186517,
+      "sd_C": 0.0,
+      "accept_rate": 0.6033333333333334,
+      "false_accept_given_accept": 0.287292817679558,
+      "mean_F_on_accept": 0.0
+    },
+    {
+      "group": "E_policy",
+      "delta_P": 0.06619836464695894,
+      "delta_C_anchor": -0.01158505575347614,
+      "sd_P": 0.02043677653981643,
+      "sd_C": 0.009099838869094053,
+      "accept_rate": 0.7766666666666666,
+      "false_accept_given_accept": 0.351931330472103,
+      "mean_F_on_accept": -0.0005966552319386852
+    }
+  ],
+  "paired": [
+    {
+      "comparison": "D-C",
+      "metric": "P",
+      "mean": -0.17947418629288267,
+      "sd": 0.13357434604032123
+    },
+    {
+      "comparison": "D-C",
+      "metric": "C_anchor",
+      "mean": -0.0056879639215255745,
+      "sd": 0.015982079695953007
+    },
+    {
+      "comparison": "C-B",
+      "metric": "P",
+      "mean": -0.004998297605743662,
+      "sd": 0.024987145103671813
+    },
+    {
+      "comparison": "C-B",
+      "metric": "C_anchor",
+      "mean": -0.008841918941563153,
+      "sd": 0.010587856180590133
+    },
+    {
+      "comparison": "C-E_scope",
+      "metric": "P",
+      "mean": -0.005740459705900415,
+      "sd": 0.03147675887296668
+    },
+    {
+      "comparison": "C-E_scope",
+      "metric": "C_anchor",
+      "mean": -0.008841918941563153,
+      "sd": 0.010587856180590133
+    },
+    {
+      "comparison": "C-E_policy",
+      "metric": "P",
+      "mean": -0.006118860777572205,
+      "sd": 0.023274519264131457
+    },
+    {
+      "comparison": "C-E_policy",
+      "metric": "C_anchor",
+      "mean": 0.0027431368119129884,
+      "sd": 0.008568274254874464
+    }
+  ]
+}
