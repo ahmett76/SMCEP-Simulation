@@ -109,4 +109,20 @@ The broader research framework distinguishes six constructs:
 - **R — Resource Availability**
 - **D — Candidate-Development Capability**
 - **E — Evaluation Reliability**
-- **F — Me
+- **F — Measured Feedback Transfer
+
+The historical v0.5 simulation is a conceptual precursor to the later framework, not a complete empirical implementation of these constructs.
+
+Citation
+
+If you use this simulation or refer to the SMCEP framework, please cite the associated manuscript:
+
+The Freedom of Pure Code: Formulating the Self-Modification Capability Emergence Problem (SMCEP). (2026). Research working manuscript. Author and publication details to be confirmed.
+
+A formal citation and permanent publication link will be added when available.
+
+Research Status
+
+SMCEP v0.5 — Historical deterministic illustration
+
+This repository is maintained for research transparency, conceptual illustration, and reproducibility. It does not constitute a validated model of AGI, ASI, or real-world recursive self-improvement.
