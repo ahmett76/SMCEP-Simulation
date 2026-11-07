@@ -5,7 +5,8 @@ The Python script provided here implements the deterministic, equation-based mod
 ## Repository Contents
 - `simulation.py`: The main Python script that runs the simulation and generates the outputs.
 - `requirements.txt`: The required Python dependencies.
-- *(Optional: `smcep_full_results.csv` & `smcep_trajectory.png` if you decide to upload the generated outputs directly)*
+- smcep_full_results.csv: The raw simulation data.
+- smcep_trajectory.png: The generated visualization of the 50-generation trajectory.
 
 ## Requirements
 To run the simulation, ensure you have Python 3.8 or higher installed. You can install the required dependencies using:
