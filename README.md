@@ -21,6 +21,7 @@ cd SMCEP-Simulation
 python simulation.py  ```
 
 Expected Outputs
+![SMCEP Simulation Trajectory](smcep_historical_trajectory)
 Upon successful execution, the script will:
 1. Print a summary table of task performance (PtPt​) at critical generations to the console.
 2. Export the full 50-generation trajectory data for all groups to smcep_full_results.csv.
