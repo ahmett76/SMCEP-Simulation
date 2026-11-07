@@ -34,7 +34,7 @@ The figure illustrates the four task-performance trajectories over 50 generation
 | File | Description |
 |---|---|
 | `simulation.py` | Main Python simulation script |
-| `requirements.txt` | Python dependencies, if provided |
+| `pip install numpy pandas matplotlib` |
 | `smcep_full_results.csv` | Simulation trajectory data |
 | `smcep_historical_trajectory.png` | Performance trajectory visualization |
 
