@@ -12,7 +12,7 @@ Run from the repository root. Specify an output directory to avoid script defaul
 
 ```bash
 python simulation.py
-python simulations/smcep_v06/smcep_simulation.py --seeds 12 --generations 20 --candidates 8 --probes 16 --out /tmp/smcep_v06_check
+python simulations/smcep_v06/smcep_simulation.py --seeds 12 --generations 20 --candidates 8 --probes 16 --task-count 24 --out /tmp/smcep_v06_check
 python simulations/smcep_v07/smcep_v07.py --out /tmp/smcep_v07_check
 python simulations/smcep_v08/smcep_v08.py --out /tmp/smcep_v08_check
 python simulations/smcep_v09/smcep_v09.py --out /tmp/smcep_v09_check
