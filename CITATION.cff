@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this code or its synthetic pilot data, please cite this repository and the associated SMCEP working manuscript."
+title: "SMCEP Simulation: Historical Illustration and Exploratory Synthetic Pilots"
+type: software
+authors:
+  - family-names: "Dönmez"
+    given-names: "Ahmet"
+    orcid: "https://orcid.org/0000-0003-4836-9774"
+repository-code: "https://github.com/ahmett76/SMCEP-Simulation"
+url: "https://github.com/ahmett76/SMCEP-Simulation"
+license: MIT
+date-released: 2026-11-08
+abstract: "Reproducibility archive for a historical deterministic v0.5 illustration and five exploratory synthetic SMCEP pilots (v0.6–v1.0). No real-LLM recursive self-improvement is demonstrated."

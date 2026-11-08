@@ -26,6 +26,9 @@ SMCEP-Simulation/
 ├── LICENSE
 ├── simulation.py
 ├── requirements.txt
+├── CITATION.cff
+├── REPRODUCIBILITY.md
+├── AUDIT_STATUS.md
 ├── ORIGINAL_V05_SOURCE.md
 ├── smcep_full_results.csv
 ├── smcep_historical_trajectory.png
@@ -105,13 +108,13 @@ The manuscript reports the following exploratory summary:
 | Mean change in ID capacity (ΔC_ID) | 0.0000 | −0.0071 |
 | Mean change in OOD capacity (ΔC_OOD) | 0.0000 | −0.0278 |
 
-These figures are manuscript-reported results. Their exact reproducibility from the archived code and data must be verified independently.
+These are descriptive results from the archived synthetic v1.0 pilot. They are not evidence of real-LLM recursive self-improvement. See `AUDIT_STATUS.md` for verification scope and `REPRODUCIBILITY.md` for execution guidance.
 
 ### Reproducibility
 
 The pilot folders are maintained separately to preserve version-specific experimental designs and outputs.
 
-Users should consult the source files within each version directory for implementation details. Execution commands, random seeds, dependencies, and output paths should be confirmed against the archived files before attempting reproduction.
+See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for commands and environment recording. **Important:** the v0.6 script defaults to a larger run than the 12-seed/20-generation pilot reported in the manuscript; use the archived pilot configuration when reproducing that result.
 
 ## Scientific Scope and Limitations
 
@@ -139,7 +142,7 @@ If you use these materials, please cite the associated research manuscript:
 
 *The Freedom of Pure Code: Formulating the Self-Modification Capability Emergence Problem (SMCEP).* Research working manuscript, 2026.
 
-Author information and a permanent publication or preprint identifier should be added when finalized.
+The author is Ahmet Dönmez (ORCID: 0000-0003-4836-9774). Repository citation metadata is provided in [CITATION.cff](CITATION.cff). No DOI is claimed for this repository; update citation metadata when a permanent preprint identifier is assigned.
 
 ## License
 
