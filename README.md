@@ -25,6 +25,8 @@ SMCEP-Simulation/
 ├── README.md
 ├── LICENSE
 ├── simulation.py
+├── requirements.txt
+├── ORIGINAL_V05_SOURCE.md
 ├── smcep_full_results.csv
 ├── smcep_historical_trajectory.png
 └── simulations/
@@ -68,7 +70,7 @@ Clone the repository and install the dependencies:
 ```bash
 git clone https://github.com/ahmett76/SMCEP-Simulation/
 cd SMCEP-Simulation
-pip install numpy pandas matplotlib
+pip install -r requirements.txt
 ```
 
 Run:
@@ -77,7 +79,7 @@ Run:
 python simulation.py
 ```
 
-The script generates trajectory data and a performance visualization. The generated plot filename may differ from the historical PNG archived in this repository.
+The script retains the original Turkish Colab labels and generates `smcep_full_results.csv` and `smcep_trajectory.png`. The archived `smcep_historical_trajectory.png` is a separate historical figure. Colab downloads are optional.
 
 ## 2. Exploratory Synthetic Pilots — v0.6 to v1.0
 
