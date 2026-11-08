@@ -32,12 +32,16 @@ SMCEP-Simulation/
 ├── ORIGINAL_V05_SOURCE.md
 ├── smcep_full_results.csv
 ├── smcep_historical_trajectory.png
-└── simulations/
-    ├── smcep_v06/
-    ├── smcep_v07/
-    ├── smcep_v08/
-    ├── smcep_v09/
-    └── smcep_v10/
+├── simulations/
+│   ├── smcep_v06/
+│   ├── smcep_v07/
+│   ├── smcep_v08/
+│   ├── smcep_v09/
+│   └── smcep_v10/
+└── interviews/
+    ├── LLM_Interview_Questionnaire.md
+    ├── LLM_Interview_Q9_Responses.md
+    └── SMCEP_Q9_18_responses_coding.csv
 ```
 
 The directory structure distinguishes the historical v0.5 model from the later synthetic pilots.
@@ -116,6 +120,34 @@ The pilot folders are maintained separately to preserve version-specific experim
 
 See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for commands and environment recording. **Important:** the v0.6 script defaults to a larger run than the 12-seed/20-generation pilot reported in the manuscript; use the archived pilot configuration when reproducing that result.
 
+## 3. Exploratory LLM Interviews
+
+The repository also provides research materials from an exploratory interview study involving six AI model families: ChatGPT, Claude, DeepSeek, Gemini, Grok, and Qwen.
+
+The interview study comprises 18 sessions, with three sessions per model family. Each session followed a common nine-question framework addressing AI self-modification, future development capability, autonomy, consciousness, system identity, and human oversight.
+
+The ninth question (Q9) invited each model to formulate an additional scientifically relevant research question, explain its importance, and provide its own answer.
+
+### Interview Materials
+
+The following materials are available in the [`interviews/`](interviews/) directory:
+
+| File | Description |
+|---|---|
+| [`LLM_Interview_Questionnaire.md`](interviews/LLM_Interview_Questionnaire.md) | Original interview instructions and nine-question template. |
+| [`LLM_Interview_Q9_Responses.md`](interviews/LLM_Interview_Q9_Responses.md) | Responses to Q9 from all 18 interview sessions, organized by model and session. |
+| [`SMCEP_Q9_18_responses_coding.csv`](interviews/SMCEP_Q9_18_responses_coding.csv) | Session-level thematic coding data supporting the reported Q9 analysis. |
+
+### Analytical Scope
+
+The Q9 responses were examined using an exploratory, analyst-defined thematic coding procedure. The coding matrix enables readers to inspect the classification of individual responses and assess the reported thematic frequencies.
+
+The released materials provide the original interview questionnaire, the 18 Q9 responses, and their thematic coding records. They do not constitute a complete public release of all nine answers from every interview session.
+
+The interviews contribute qualitative perspectives on the conceptual and governance questions raised by SMCEP. They are not controlled experiments demonstrating the operational capabilities, internal states, or recursive self-improvement of the interviewed models.
+
+The thematic analysis is exploratory, and independent inter-coder reliability assessment has not been conducted.
+
 ## Scientific Scope and Limitations
 
 - The v0.5 model is a deterministic conceptual illustration, not an empirical LLM experiment.
@@ -131,8 +163,9 @@ This repository supports the research manuscript:
 
 **The Freedom of Pure Code: Formulating the Self-Modification Capability Emergence Problem (SMCEP)**
 
-- **Appendix D:** Historical deterministic v0.5 illustration.
 - **Main experimental sections and reproducibility appendix:** Exploratory synthetic pilots v0.6–v1.0.
+- **Appendix D:** Historical deterministic v0.5 illustration.
+- **Appendix E:** Exploratory LLM interviews, including the nine-question framework and thematic analysis of 18 Q9 responses.
 
 The manuscript also proposes a prospective evaluation protocol involving independent audits and controlled modification permissions. The synthetic pilots should not be mistaken for an implementation or validation of that complete real-LLM protocol.
 
@@ -150,6 +183,11 @@ See the [LICENSE](LICENSE) file for licensing information.
 
 ## Research Status
 
-**Historical deterministic illustration (v0.5) and exploratory synthetic pilots (v0.6–v1.0).**
+**Research components:**
+- Historical deterministic illustration (v0.5).
+- Exploratory synthetic pilots (v0.6–v1.0).
+- Exploratory LLM interviews (18 sessions across six model families).
 
-The repository is provided for research transparency, methodological inspection, and reproducibility assessment. Its results should not be interpreted as empirical validation of autonomous recursive self-improvement.
+The repository provides simulation code, experimental outputs, interview materials, and thematic coding records to support research transparency, methodological inspection, and reproducibility assessment.
+
+Together, these materials document the conceptual and exploratory empirical foundations of SMCEP. Confirmatory evaluation of recursive development capability in real-LLM systems remains a distinct research objective.
