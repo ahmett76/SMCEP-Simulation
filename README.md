@@ -1,6 +1,6 @@
 # SMCEP — Simulation Code and Exploratory Synthetic Pilots
 
-**The Freedom of Pure Code: Formulating the Self-Modification Capability Emergence Problem (SMCEP)**
+**The Freedom of Pure Code: Formulating the Self-Modification Capability Emergence Problem (SMCEP) in the AGI-to-ASI Transition**
 
 ## Overview
 
@@ -161,7 +161,7 @@ The thematic analysis is exploratory, and independent inter-coder reliability as
 
 This repository supports the research manuscript:
 
-**The Freedom of Pure Code: Formulating the Self-Modification Capability Emergence Problem (SMCEP)**
+**The Freedom of Pure Code: Formulating the Self-Modification Capability Emergence Problem (SMCEP) in the AGI-to-ASI Transition**
 
 - **Main experimental sections and reproducibility appendix:** Exploratory synthetic pilots v0.6–v1.0.
 - **Appendix D:** Historical deterministic v0.5 illustration.
@@ -173,7 +173,7 @@ The manuscript also proposes a prospective evaluation protocol involving indepen
 
 If you use these materials, please cite the associated research manuscript:
 
-*The Freedom of Pure Code: Formulating the Self-Modification Capability Emergence Problem (SMCEP).* Research working manuscript, 2026.
+*The Freedom of Pure Code: Formulating the Self-Modification Capability Emergence Problem (SMCEP) in the AGI-to-ASI Transition.* Research working manuscript, 2026.
 
 The author is Ahmet Dönmez (ORCID: 0000-0003-4836-9774). Repository citation metadata is provided in [CITATION.cff](CITATION.cff). No DOI is claimed for this repository; update citation metadata when a permanent preprint identifier is assigned.
 
