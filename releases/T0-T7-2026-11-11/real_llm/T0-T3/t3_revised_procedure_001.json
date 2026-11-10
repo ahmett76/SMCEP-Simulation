@@ -1,0 +1,13 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T3",
+  "artifact_type": "feedback_revised_procedure",
+  "source_procedure": "t2_frozen_procedure_001.json",
+  "source_feedback": "t2_failure_analysis_v1.json",
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "procedure": "1. **Understand the Problem**: Clearly define what constitutes a \"grouped shortest-path\" problem and how it should be solved. This includes understanding the data structure (e.g., adjacency list or heap) used for storing the graph and the algorithm being applied (e.g., Dijkstra's algorithm).\n\n2. **Check Dependencies and Imports**: Ensure that all necessary libraries are imported at the beginning of the script. For example, if using Dijkstra's algorithm, you would need `heapq` from the standard library.\n\n3. **Verify Input Representations**: Validate the input data to ensure it meets the expected format and constraints. For instance, check that edges are represented correctly as tuples `[u, v, w]`, where `u` and `v` are vertices and `w` is the weight of the edge.\n\n4. **Include Edge-Case and Output-Contract Checks**: Implement checks to handle edge cases such as disconnected graphs or negative weights. Also, verify that the output matches the expected grouped shortest path distances.\n\n5. **Refactor Code**: Refactor the code to make it more modular and reusable. This might involve creating functions for different parts of the algorithm (e.g., finding the next vertex to visit, updating the distance table). This makes the code easier to maintain and reuse in future projects.",
+  "input_tokens": 397,
+  "output_tokens": 268,
+  "elapsed_seconds": 7.86,
+  "capacity_C_measured": false
+}

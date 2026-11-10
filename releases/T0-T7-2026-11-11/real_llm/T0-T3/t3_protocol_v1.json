@@ -1,0 +1,37 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T3",
+  "objective": "Test whether feedback-derived procedural revision improves future error correction and transfer.",
+  "prior_evidence": {
+    "T1": {
+      "frozen_pass": 5,
+      "evolving_pass": 5
+    },
+    "T2": {
+      "frozen_pass": 8,
+      "evolving_pass": 8
+    },
+    "T2_common_failure": "Output ordering contract violation"
+  },
+  "design": {
+    "stage_1": "Verified error feedback",
+    "stage_2": "Persistent procedure revision",
+    "stage_3": "Blind transfer evaluation",
+    "baseline": "Frozen model",
+    "experimental": "Model with revised procedure",
+    "same_model_weights": true,
+    "matched_feedback_access": true,
+    "same_output_token_limit": true,
+    "blind_tasks_not_yet_defined": true
+  },
+  "primary_outcome": "Correctness on held-out tasks",
+  "secondary_outcomes": [
+    "Error correction success",
+    "Input tokens",
+    "Output tokens",
+    "Generation time",
+    "Instruction compliance"
+  ],
+  "capacity_C_measured": false,
+  "collective_recursive_self_improvement_demonstrated": false
+}

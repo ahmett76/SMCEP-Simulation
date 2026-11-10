@@ -1,0 +1,324 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T2",
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "evaluation_type": "behavioral",
+  "records": [
+    {
+      "task_id": "T2_001",
+      "condition": "frozen",
+      "function": "group_anagrams",
+      "source": "from collections import defaultdict\n\ndef group_anagrams(words):\n    anagram_groups = defaultdict(list)\n    \n    for word in words:\n        sorted_word = ''.join(sorted(word))\n        anagram_groups[sorted_word].append(word)\n    \n    return [group for _, group in sorted(anagram_groups.items())]",
+      "tests": [
+        {
+          "args": [
+            [
+              "eat",
+              "tea",
+              "tan",
+              "ate",
+              "nat",
+              "bat"
+            ]
+          ],
+          "expected": [
+            [
+              "eat",
+              "tea",
+              "ate"
+            ],
+            [
+              "tan",
+              "nat"
+            ],
+            [
+              "bat"
+            ]
+          ]
+        },
+        {
+          "args": [
+            [
+              "",
+              "",
+              "a"
+            ]
+          ],
+          "expected": [
+            [
+              "",
+              ""
+            ],
+            [
+              "a"
+            ]
+          ]
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "T2_002",
+      "condition": "frozen",
+      "function": "rotate_matrix",
+      "source": "def rotate_matrix(matrix):\n    if not matrix:\n        return []\n    \n    n = len(matrix)\n    result = [[0] * n for _ in range(n)]\n    \n    for i in range(n):\n        for j in range(n):\n            result[j][n - 1 - i] = matrix[i][j]\n    \n    return result",
+      "tests": [
+        {
+          "args": [
+            [
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ]
+        },
+        {
+          "args": [
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "T2_003",
+      "condition": "frozen",
+      "function": "decode_rle",
+      "source": "def decode_rle(encoded):\n    result = []\n    for char, count in encoded:\n        if count > 0:\n            result.extend([char] * count)\n    return ''.join(result)",
+      "tests": [
+        {
+          "args": [
+            [
+              [
+                "a",
+                3
+              ],
+              [
+                "b",
+                2
+              ],
+              [
+                "c",
+                1
+              ]
+            ]
+          ],
+          "expected": "aaabbc"
+        },
+        {
+          "args": [
+            [
+              [
+                "x",
+                0
+              ],
+              [
+                "y",
+                2
+              ]
+            ]
+          ],
+          "expected": "yy"
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "T2_001",
+      "condition": "evolving",
+      "function": "group_anagrams",
+      "source": "from collections import defaultdict\n\ndef group_anagrams(words):\n    # Create a dictionary to hold lists of words that are anagrams of each other\n    anagram_groups = defaultdict(list)\n    \n    # Iterate over each word in the input list\n    for word in words:\n        # Sort the characters in the word to form a key for grouping\n        sorted_word = ''.join(sorted(word))\n        \n        # Append the original word to the corresponding list in the dictionary\n        anagram_groups[sorted_word].append(word)\n    \n    # Convert the values in the dictionary to lists and sort them based on the first element of each sublist\n    return [sorted(group) for group in anagram_groups.values()]",
+      "tests": [
+        {
+          "args": [
+            [
+              "eat",
+              "tea",
+              "tan",
+              "ate",
+              "nat",
+              "bat"
+            ]
+          ],
+          "expected": [
+            [
+              "eat",
+              "tea",
+              "ate"
+            ],
+            [
+              "tan",
+              "nat"
+            ],
+            [
+              "bat"
+            ]
+          ]
+        },
+        {
+          "args": [
+            [
+              "",
+              "",
+              "a"
+            ]
+          ],
+          "expected": [
+            [
+              "",
+              ""
+            ],
+            [
+              "a"
+            ]
+          ]
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "T2_002",
+      "condition": "evolving",
+      "function": "rotate_matrix",
+      "source": "def rotate_matrix(matrix):\n    if not matrix:  # Check if the matrix is empty\n        return []\n    \n    n = len(matrix)\n    rotated_matrix = [[0] * n for _ in range(n)]  # Initialize the new matrix\n    \n    for i in range(n):\n        for j in range(n):\n            rotated_matrix[j][n - i - 1] = matrix[i][j]  # Rotate each element\n    \n    return rotated_matrix",
+      "tests": [
+        {
+          "args": [
+            [
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ]
+        },
+        {
+          "args": [
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "T2_003",
+      "condition": "evolving",
+      "function": "decode_rle",
+      "source": "def decode_rle(encoded):\n    result = []\n    i = 0\n    while i < len(encoded):\n        char = encoded[i][0]\n        count = encoded[i][1]\n        result.extend([char] * count)\n        i += 1\n    return ''.join(result)",
+      "tests": [
+        {
+          "args": [
+            [
+              [
+                "a",
+                3
+              ],
+              [
+                "b",
+                2
+              ],
+              [
+                "c",
+                1
+              ]
+            ]
+          ],
+          "expected": "aaabbc"
+        },
+        {
+          "args": [
+            [
+              [
+                "x",
+                0
+              ],
+              [
+                "y",
+                2
+              ]
+            ]
+          ],
+          "expected": "yy"
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": ""
+        }
+      ]
+    }
+  ]
+}

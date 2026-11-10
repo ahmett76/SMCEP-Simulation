@@ -1,0 +1,67 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T2",
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "task_set": "unseen_transfer_v1",
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 512
+  },
+  "records": [
+    {
+      "task_id": "T2_001",
+      "condition": "frozen",
+      "function": "group_anagrams",
+      "source": "```python\nfrom collections import defaultdict\n\ndef group_anagrams(words):\n    anagram_groups = defaultdict(list)\n    \n    for word in words:\n        sorted_word = ''.join(sorted(word))\n        anagram_groups[sorted_word].append(word)\n    \n    return [group for _, group in sorted(anagram_groups.items())]\n```",
+      "input_tokens": 83,
+      "output_tokens": 67,
+      "elapsed_seconds": 2.48
+    },
+    {
+      "task_id": "T2_002",
+      "condition": "frozen",
+      "function": "rotate_matrix",
+      "source": "```python\ndef rotate_matrix(matrix):\n    if not matrix:\n        return []\n    \n    n = len(matrix)\n    result = [[0] * n for _ in range(n)]\n    \n    for i in range(n):\n        for j in range(n):\n            result[j][n - 1 - i] = matrix[i][j]\n    \n    return result\n```",
+      "input_tokens": 86,
+      "output_tokens": 76,
+      "elapsed_seconds": 2.43
+    },
+    {
+      "task_id": "T2_003",
+      "condition": "frozen",
+      "function": "decode_rle",
+      "source": "```python\ndef decode_rle(encoded):\n    result = []\n    for char, count in encoded:\n        if count > 0:\n            result.extend([char] * count)\n    return ''.join(result)\n```",
+      "input_tokens": 81,
+      "output_tokens": 45,
+      "elapsed_seconds": 1.31
+    },
+    {
+      "task_id": "T2_001",
+      "condition": "evolving",
+      "function": "group_anagrams",
+      "source": "```python\nfrom collections import defaultdict\n\ndef group_anagrams(words):\n    # Create a dictionary to hold lists of words that are anagrams of each other\n    anagram_groups = defaultdict(list)\n    \n    # Iterate over each word in the input list\n    for word in words:\n        # Sort the characters in the word to form a key for grouping\n        sorted_word = ''.join(sorted(word))\n        \n        # Append the original word to the corresponding list in the dictionary\n        anagram_groups[sorted_word].append(word)\n    \n    # Convert the values in the dictionary to lists and sort them based on the first element of each sublist\n    return [sorted(group) for group in anagram_groups.values()]\n```\n\nThis solution uses a `defaultdict` to group words that are anagrams together. It sorts the characters in each word to create a unique key for each group. The words are then grouped into these keys and returned as a list of lists, preserving the original order of words within each group.",
+      "input_tokens": 360,
+      "output_tokens": 207,
+      "elapsed_seconds": 6.03
+    },
+    {
+      "task_id": "T2_002",
+      "condition": "evolving",
+      "function": "rotate_matrix",
+      "source": "```python\ndef rotate_matrix(matrix):\n    if not matrix:  # Check if the matrix is empty\n        return []\n    \n    n = len(matrix)\n    rotated_matrix = [[0] * n for _ in range(n)]  # Initialize the new matrix\n    \n    for i in range(n):\n        for j in range(n):\n            rotated_matrix[j][n - i - 1] = matrix[i][j]  # Rotate each element\n    \n    return rotated_matrix\n```\n\nThis solution defines a function `rotate_matrix` that takes a square matrix as input and returns a new matrix that is the result of rotating the original matrix 90 degrees clockwise. The function first checks if the input matrix is empty and returns an empty list if true. It then initializes a new matrix with the same dimensions as the input matrix. Finally, it iterates over each element of the input matrix and places it in its corresponding position in the new matrix after rotation.",
+      "input_tokens": 363,
+      "output_tokens": 195,
+      "elapsed_seconds": 6.55
+    },
+    {
+      "task_id": "T2_003",
+      "condition": "evolving",
+      "function": "decode_rle",
+      "source": "```python\ndef decode_rle(encoded):\n    result = []\n    i = 0\n    while i < len(encoded):\n        char = encoded[i][0]\n        count = encoded[i][1]\n        result.extend([char] * count)\n        i += 1\n    return ''.join(result)\n```",
+      "input_tokens": 358,
+      "output_tokens": 65,
+      "elapsed_seconds": 1.91
+    }
+  ],
+  "capacity_C_measured": false
+}

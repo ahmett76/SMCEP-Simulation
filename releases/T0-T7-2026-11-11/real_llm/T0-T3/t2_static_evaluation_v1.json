@@ -1,0 +1,62 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T2",
+  "evaluation_type": "static",
+  "records": [
+    {
+      "task_id": "T2_001",
+      "condition": "frozen",
+      "syntax_ok": false,
+      "function_found": false,
+      "markdown_fence": true,
+      "syntax_error": "invalid syntax (line 1)",
+      "source_lines": 12
+    },
+    {
+      "task_id": "T2_002",
+      "condition": "frozen",
+      "syntax_ok": false,
+      "function_found": false,
+      "markdown_fence": true,
+      "syntax_error": "invalid syntax (line 1)",
+      "source_lines": 14
+    },
+    {
+      "task_id": "T2_003",
+      "condition": "frozen",
+      "syntax_ok": false,
+      "function_found": false,
+      "markdown_fence": true,
+      "syntax_error": "invalid syntax (line 1)",
+      "source_lines": 8
+    },
+    {
+      "task_id": "T2_001",
+      "condition": "evolving",
+      "syntax_ok": false,
+      "function_found": false,
+      "markdown_fence": true,
+      "syntax_error": "invalid syntax (line 1)",
+      "source_lines": 20
+    },
+    {
+      "task_id": "T2_002",
+      "condition": "evolving",
+      "syntax_ok": false,
+      "function_found": false,
+      "markdown_fence": true,
+      "syntax_error": "invalid syntax (line 1)",
+      "source_lines": 16
+    },
+    {
+      "task_id": "T2_003",
+      "condition": "evolving",
+      "syntax_ok": false,
+      "function_found": false,
+      "markdown_fence": true,
+      "syntax_error": "invalid syntax (line 1)",
+      "source_lines": 11
+    }
+  ],
+  "capacity_C_measured": false
+}

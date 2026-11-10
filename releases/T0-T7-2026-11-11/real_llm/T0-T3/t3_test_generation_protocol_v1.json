@@ -1,0 +1,33 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T3",
+  "task_count": 6,
+  "tests_per_task": 5,
+  "conditions": [
+    "frozen",
+    "evolving"
+  ],
+  "generation_rules": {
+    "tasks_must_be_new": true,
+    "exclude_T0_T1_T2_tasks": true,
+    "define_exact_function_signatures": true,
+    "define_input_output_contracts": true,
+    "include_boundary_cases": true,
+    "include_order_sensitive_cases": true,
+    "expected_results_fixed_before_model_generation": true
+  },
+  "evaluation_rules": {
+    "identical_tasks_and_tests": true,
+    "identical_model_weights": true,
+    "deterministic_generation": true,
+    "same_max_new_tokens": true,
+    "record_input_output_tokens": true,
+    "record_generation_time": true,
+    "execute_only_in_isolated_VM": true,
+    "preserve_raw_outputs": true,
+    "preserve_failures": true
+  },
+  "primary_metric": "held_out_test_pass_rate",
+  "secondary_metric": "error_correction_and_resource_cost",
+  "capacity_C_measured": false
+}

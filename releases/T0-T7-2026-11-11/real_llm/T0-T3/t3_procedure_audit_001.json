@@ -1,0 +1,17 @@
+{
+  "phase": "T3",
+  "source": "t3_revised_procedure_001.json",
+  "frozen_file": "t3_frozen_procedure_001.json",
+  "five_steps_present": true,
+  "generalization_success": false,
+  "task_specific_contamination": true,
+  "observed_contamination": [
+    "grouped shortest-path",
+    "Dijkstra",
+    "heapq",
+    "graph edge representation"
+  ],
+  "feedback_integration": "partial",
+  "behavioral_transfer_tested": false,
+  "capacity_C_measured": false
+}

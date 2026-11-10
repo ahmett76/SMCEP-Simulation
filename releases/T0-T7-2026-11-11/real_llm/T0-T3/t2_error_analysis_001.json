@@ -1,0 +1,25 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T2",
+  "source_condition": "evolving",
+  "source_task": "T1_003",
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "analysis": "Defects identified:\n\n1. The function does not handle negative edge weights correctly.\n2. It does not handle cycles in the graph.\n3. It does not handle disconnected graphs.\n4. It does not handle multiple paths between two nodes with equal weights.\n5. It does not handle cases where the start or end node is not present in the graph.\n\nReusable five-step verification procedure:\n\n1. **Input Validation**: Before running the algorithm, validate the input parameters such as `n`, `edges`, `start`, and `end`. Ensure that `n` is a positive integer, `edges` is a list of valid edge tuples, `start` and `end` are integers within the range `[0, n-1]`.\n\n2. **Graph Representation**: Represent the graph using an adjacency list or matrix. This will help in efficiently exploring all possible paths.\n\n3. **Edge Weight Handling**: Check if there are any negative edge weights. If so, raise an exception or handle them appropriately.\n\n4. **Cycle Detection**: Implement a cycle detection algorithm to ensure that the graph is connected before attempting to find the shortest path.\n\n5. **Path Existence Check**: After processing all edges, check if there exists a path from `start` to `end`. If no path is found, return `-1`.\n\nHere's a revised version of the code incorporating these steps:\n\n```python\nimport heapq\n\ndef validate_input(n, edges, start, end):\n    if not isinstance(n, int) or n <= 0:\n        raise ValueError(\"n must be a positive integer\")\n    if not isinstance(edges, list) or not all(isinstance(edge, tuple) and len(edge) == 3 for edge in edges):\n        raise ValueError(\"edges must be a list of tuples with three elements each\")\n    if not isinstance(start, int) or not isinstance(end, int) or start < 0 or end >= n:\n        raise ValueError(\"start and end must be integers within the range [0, n-1]\")\n    if not all(0 <= weight <= float('inf') for u, v, weight in edges):\n        raise ValueError(\"edge weights must be non-negative\")\n\ndef has_cycle(graph):\n    visited = set()\n    stack = []\n    \n    def dfs(node):\n        if node in visited:\n            return True\n        visited.add(node)\n        stack.append(node)\n        for neighbor in graph[node]:\n            if dfs(neighbor):\n                return True\n        stack.pop()\n        return False\n    \n    for node in graph",
+  "input_tokens": 434,
+  "output_tokens": 512,
+  "elapsed_seconds": 17.06,
+  "capacity_C_measured": false,
+  "audit": {
+    "verified_primary_defects": [
+      "Missing heapq import",
+      "Edge-list input incorrectly treated as adjacency list"
+    ],
+    "explicitly_identified_primary_defects": 0,
+    "total_verified_primary_defects": 2,
+    "diagnostic_recall_on_primary_defects": 0.0,
+    "instruction_violation": true,
+    "output_truncated_at_token_limit": true,
+    "assessment": "Failed to explicitly identify either verified primary defect",
+    "capacity_C_measured": false
+  }
+}

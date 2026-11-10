@@ -1,0 +1,31 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T3",
+  "design_type": "prospective_blind_transfer",
+  "task_count": 6,
+  "tests_per_task": 5,
+  "total_tests_per_condition": 30,
+  "task_categories": [
+    "Stable ordering and grouping",
+    "Structured input transformation",
+    "Boundary conditions",
+    "Dependency and import handling",
+    "Data representation consistency",
+    "Output contract verification"
+  ],
+  "conditions": [
+    "frozen",
+    "evolving"
+  ],
+  "controls": {
+    "same_model_weights": true,
+    "same_task_instructions": true,
+    "same_feedback_history": true,
+    "same_generation_parameters": true,
+    "same_max_output_tokens": true,
+    "measure_actual_token_cost": true
+  },
+  "task_content_status": "not_yet_created",
+  "procedure_revision_allowed_before_task_exposure": true,
+  "capacity_C_measured": false
+}

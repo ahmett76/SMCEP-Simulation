@@ -1,0 +1,490 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T3",
+  "task_set": "blind_transfer_v1",
+  "tasks": [
+    {
+      "task_id": "T3_001",
+      "function": "stable_unique",
+      "instruction": "Implement stable_unique(items). Input is a list of integers. Return a new list containing each distinct integer exactly once, preserving its first occurrence order. Do not modify the input.",
+      "tests": [
+        {
+          "args": [
+            [
+              3,
+              1,
+              3,
+              2,
+              1
+            ]
+          ],
+          "expected": [
+            3,
+            1,
+            2
+          ]
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            [
+              5,
+              5,
+              5
+            ]
+          ],
+          "expected": [
+            5
+          ]
+        },
+        {
+          "args": [
+            [
+              -1,
+              0,
+              -1,
+              2
+            ]
+          ],
+          "expected": [
+            -1,
+            0,
+            2
+          ]
+        },
+        {
+          "args": [
+            [
+              4,
+              2,
+              4,
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            4,
+            2,
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "T3_002",
+      "function": "transpose_rows",
+      "instruction": "Implement transpose_rows(rows). Input is a rectangular list of lists. Return its transpose as a new list of lists. An empty input returns []. Do not modify the input.",
+      "tests": [
+        {
+          "args": [
+            [
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                4,
+                5,
+                6
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            [
+              [
+                7
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              7
+            ]
+          ]
+        },
+        {
+          "args": [
+            [
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "args": [
+            [
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "T3_003",
+      "function": "longest_zero_run",
+      "instruction": "Implement longest_zero_run(values). Input is a list of integers. Return the length of the longest consecutive run of zeros. Return 0 if there are no zeros.",
+      "tests": [
+        {
+          "args": [
+            [
+              1,
+              0,
+              0,
+              2,
+              0
+            ]
+          ],
+          "expected": 2
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "args": [
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "expected": 3
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 0
+        },
+        {
+          "args": [
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              2,
+              0
+            ]
+          ],
+          "expected": 3
+        }
+      ]
+    },
+    {
+      "task_id": "T3_004",
+      "function": "count_words",
+      "instruction": "Implement count_words(text). Input is a string. Split words using whitespace, convert each word to lowercase, and return a dictionary mapping words to occurrence counts. Punctuation is part of a word and must not be removed.",
+      "tests": [
+        {
+          "args": [
+            "Red blue red"
+          ],
+          "expected": {
+            "red": 2,
+            "blue": 1
+          }
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": {}
+        },
+        {
+          "args": [
+            "Hi hi HI"
+          ],
+          "expected": {
+            "hi": 3
+          }
+        },
+        {
+          "args": [
+            "a, a"
+          ],
+          "expected": {
+            "a,": 1,
+            "a": 1
+          }
+        },
+        {
+          "args": [
+            "  X\tY\nx  "
+          ],
+          "expected": {
+            "x": 2,
+            "y": 1
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "T3_005",
+      "function": "edges_to_adjacency",
+      "instruction": "Implement edges_to_adjacency(n, edges). Nodes are integers from 0 to n-1. Input edges is a list of directed pairs [u, v]. Return a list of n adjacency lists. Preserve edge input order and duplicate edges. Include empty lists for nodes without outgoing edges.",
+      "tests": [
+        {
+          "args": [
+            3,
+            [
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              2,
+              1
+            ],
+            [],
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "args": [
+            3,
+            []
+          ],
+          "expected": [
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "args": [
+            1,
+            [
+              [
+                0,
+                0
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              0
+            ]
+          ]
+        },
+        {
+          "args": [
+            2,
+            [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              1,
+              1
+            ],
+            []
+          ]
+        },
+        {
+          "args": [
+            4,
+            [
+              [
+                3,
+                0
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          ],
+          "expected": [
+            [],
+            [
+              2
+            ],
+            [],
+            [
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "T3_006",
+      "function": "merge_sorted_unique",
+      "instruction": "Implement merge_sorted_unique(a, b). Inputs are two ascending-sorted lists of integers. Return one ascending-sorted list containing each distinct integer exactly once. Do not modify either input.",
+      "tests": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              5
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "args": [
+            [],
+            []
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            [
+              1,
+              1,
+              2
+            ],
+            [
+              2,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "args": [
+            [
+              -3,
+              0
+            ],
+            [
+              -2,
+              0,
+              4
+            ]
+          ],
+          "expected": [
+            -3,
+            -2,
+            0,
+            4
+          ]
+        },
+        {
+          "args": [
+            [],
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "test_count": 30,
+  "capacity_C_measured": false
+}

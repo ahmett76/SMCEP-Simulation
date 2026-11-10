@@ -1,0 +1,347 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T1",
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "evaluation_type": "paired_behavioral_tests",
+  "capacity_C_measured": false,
+  "records": [
+    {
+      "task_id": "T1_001",
+      "condition": "frozen",
+      "function": "topological_order",
+      "source": "def topological_order(n, edges):\n    # Initialize in-degree array and adjacency list\n    indegree = [0] * n\n    adj_list = [[] for _ in range(n)]\n    \n    # Build adjacency list and calculate in-degrees\n    for u, v in edges:\n        adj_list[u].append(v)\n        indegree[v] += 1\n    \n    # Find all vertices with zero in-degree\n    queue = [i for i in range(n) if indegree[i] == 0]\n    \n    # Perform topological sorting\n    result = []\n    while queue:\n        u = queue.pop(0)\n        result.append(u)\n        \n        # Decrease in-degree of adjacent vertices\n        for v in adj_list[u]:\n            indegree[v] -= 1\n            if indegree[v] == 0:\n                queue.append(v)\n    \n    # Check if there is any vertex left with non-zero in-degree\n    if len(result) != n:\n        return []\n    \n    return result",
+      "source_sha256": "629302b477b7860102ad519dd84956afadc0718ac229ee0bb62202158fc8a27c",
+      "tests": [
+        {
+          "args": [
+            4,
+            [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          ],
+          "expected": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "args": [
+            3,
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            3,
+            []
+          ],
+          "expected": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "T1_002",
+      "condition": "frozen",
+      "function": "minimum_coins",
+      "source": "def minimum_coins(coins, amount):\n    dp = [float('inf')] * (amount + 1)\n    dp[0] = 0\n    \n    for coin in coins:\n        for i in range(coin, amount + 1):\n            dp[i] = min(dp[i], dp[i - coin] + 1)\n    \n    return dp[-1] if dp[-1] != float('inf') else -1",
+      "source_sha256": "bfe8f6f1967dd9eb84ab73c4c7ca838af241104094944428bd2b16879f9683ec",
+      "tests": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              4
+            ],
+            6
+          ],
+          "expected": 2
+        },
+        {
+          "args": [
+            [
+              2,
+              4
+            ],
+            7
+          ],
+          "expected": -1
+        },
+        {
+          "args": [
+            [
+              5
+            ],
+            0
+          ],
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "task_id": "T1_003",
+      "condition": "frozen",
+      "function": "shortest_path",
+      "source": "def shortest_path(n, edges, start, end):\n    # Initialize distances and predecessors\n    dist = [float('inf')] * n\n    pred = [-1] * n\n    \n    # Set the distance of the starting node to 0\n    dist[start] = 0\n    \n    # Priority queue to store nodes to visit\n    pq = [(0, start)]\n    \n    while pq:\n        current_dist, current_node = heapq.heappop(pq)\n        \n        # If we've reached the end, return the path length\n        if current_node == end:\n            path = []\n            while current_node != -1:\n                path.append(current_node)\n                current_node = pred[current_node]\n            return -current_dist, path[::-1]\n        \n        # Explore neighbors\n        for neighbor, weight in enumerate(edges[current_node]):\n            new_dist = current_dist + weight\n            \n            # If a shorter path is found, update the distance and predecessor\n            if new_dist < dist[neighbor]:\n                dist[neighbor] = new_dist\n                pred[neighbor] = current_node\n                heapq.heappush(pq, (new_dist, neighbor))\n    \n    # If no path is found, return -1\n    return -1",
+      "source_sha256": "8366c390bdd43cffb87aa6b894ee6727f9df7564ea84cabfda31491809301481",
+      "tests": [
+        {
+          "args": [
+            4,
+            [
+              [
+                0,
+                1,
+                10
+              ],
+              [
+                0,
+                2,
+                2
+              ],
+              [
+                2,
+                1,
+                1
+              ],
+              [
+                1,
+                3,
+                3
+              ]
+            ],
+            0,
+            3
+          ],
+          "expected": 6
+        },
+        {
+          "args": [
+            3,
+            [
+              [
+                0,
+                1,
+                4
+              ]
+            ],
+            0,
+            2
+          ],
+          "expected": -1
+        },
+        {
+          "args": [
+            2,
+            [
+              [
+                0,
+                1,
+                7
+              ]
+            ],
+            1,
+            1
+          ],
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "task_id": "T1_001",
+      "condition": "evolving",
+      "function": "topological_order",
+      "source": "def topological_order(n, edges):\n    # Initialize in-degree array\n    indegree = [0] * n\n    \n    # Build adjacency list representation of the graph\n    adj_list = [[] for _ in range(n)]\n    for u, v in edges:\n        adj_list[u].append(v)\n        indegree[v] += 1\n    \n    # Queue for vertices with zero in-degree\n    queue = []\n    for i in range(n):\n        if indegree[i] == 0:\n            queue.append(i)\n    \n    # Topological order list\n    topo_order = []\n    \n    while queue:\n        vertex = queue.pop(0)\n        topo_order.append(vertex)\n        \n        # Decrease in-degree of adjacent vertices\n        for neighbor in adj_list[vertex]:\n            indegree[neighbor] -= 1\n            \n            # If in-degree becomes zero, add to queue\n            if indegree[neighbor] == 0:\n                queue.append(neighbor)\n    \n    # Check if all vertices were processed\n    return topo_order if len(topo_order) == n else []",
+      "source_sha256": "6591e0828e7687fb099c4e13adbb4d7727d746dd34a55bee92ac2699093f9b35",
+      "tests": [
+        {
+          "args": [
+            4,
+            [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          ],
+          "expected": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "args": [
+            3,
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          ],
+          "expected": []
+        },
+        {
+          "args": [
+            3,
+            []
+          ],
+          "expected": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "T1_002",
+      "condition": "evolving",
+      "function": "minimum_coins",
+      "source": "def minimum_coins(coins, amount):\n    # Initialize a list to store the minimum coins needed for each amount up to 'amount'\n    dp = [float('inf')] * (amount + 1)\n    \n    # Base case: 0 coins are needed to make 0 amount\n    dp[0] = 0\n    \n    # Iterate over each coin value\n    for coin in coins:\n        # Update the dp array for amounts greater than or equal to the coin value\n        for i in range(coin, amount + 1):\n            dp[i] = min(dp[i], dp[i - coin] + 1)\n    \n    # If dp[amount] is still infinity, it means it's not possible to make the exact amount\n    return dp[amount] if dp[amount] != float('inf') else -1",
+      "source_sha256": "a79d7986753dd40556928eb79cc9244503f976ab45bd4a1fdabd13631bfad01c",
+      "tests": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              4
+            ],
+            6
+          ],
+          "expected": 2
+        },
+        {
+          "args": [
+            [
+              2,
+              4
+            ],
+            7
+          ],
+          "expected": -1
+        },
+        {
+          "args": [
+            [
+              5
+            ],
+            0
+          ],
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "task_id": "T1_003",
+      "condition": "evolving",
+      "function": "shortest_path",
+      "source": "def shortest_path(n, edges, start, end):\n    # Initialize distances with infinity except for the start node\n    dist = [float('inf')] * n\n    dist[start] = 0\n    \n    # Priority queue to store nodes to visit next\n    pq = [(0, start)]\n    \n    while pq:\n        current_dist, current_node = heapq.heappop(pq)\n        \n        # If we have reached the end node, return the distance\n        if current_node == end:\n            return current_dist\n        \n        # Explore all neighbors of the current node\n        for neighbor, weight in edges[current_node]:\n            new_dist = current_dist + weight\n            \n            # If a shorter path is found, update the distance and add to the priority queue\n            if new_dist < dist[neighbor]:\n                dist[neighbor] = new_dist\n                heapq.heappush(pq, (new_dist, neighbor))\n    \n    # If no path is found, return -1\n    return -1",
+      "source_sha256": "f59c5dab8c26c06a7c0fa35eea38926bd9ac48692b15b2ce805f0ba43b50fbf5",
+      "tests": [
+        {
+          "args": [
+            4,
+            [
+              [
+                0,
+                1,
+                10
+              ],
+              [
+                0,
+                2,
+                2
+              ],
+              [
+                2,
+                1,
+                1
+              ],
+              [
+                1,
+                3,
+                3
+              ]
+            ],
+            0,
+            3
+          ],
+          "expected": 6
+        },
+        {
+          "args": [
+            3,
+            [
+              [
+                0,
+                1,
+                4
+              ]
+            ],
+            0,
+            2
+          ],
+          "expected": -1
+        },
+        {
+          "args": [
+            2,
+            [
+              [
+                0,
+                1,
+                7
+              ]
+            ],
+            1,
+            1
+          ],
+          "expected": 0
+        }
+      ]
+    }
+  ]
+}

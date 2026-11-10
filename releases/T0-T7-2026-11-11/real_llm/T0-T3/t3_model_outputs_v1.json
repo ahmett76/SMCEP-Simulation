@@ -1,0 +1,118 @@
+{
+  "phase": "T3",
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "generation": {
+    "max_new_tokens": 512,
+    "do_sample": false
+  },
+  "records": [
+    {
+      "task_id": "T3_001",
+      "condition": "frozen",
+      "function": "stable_unique",
+      "source": "```python\ndef stable_unique(items):\n    seen = set()\n    result = []\n    for item in items:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result\n```",
+      "input_tokens": 76,
+      "output_tokens": 46,
+      "elapsed_seconds": 1.413
+    },
+    {
+      "task_id": "T3_001",
+      "condition": "evolving",
+      "function": "stable_unique",
+      "source": "```python\ndef stable_unique(items):\n    seen = set()\n    result = []\n    for item in items:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result\n```\n\nThis Python function `stable_unique` takes a list of integers as input and returns a new list containing each distinct integer exactly once, preserving its first occurrence order. It uses a set to keep track of seen elements and iterates through the input list, adding each element to the result list only if it has not been encountered before. The function does not modify the input list.",
+      "input_tokens": 352,
+      "output_tokens": 122,
+      "elapsed_seconds": 3.587
+    },
+    {
+      "task_id": "T3_002",
+      "condition": "frozen",
+      "function": "transpose_rows",
+      "source": "```python\ndef transpose_rows(rows):\n    if not rows:\n        return []\n    \n    # Find the length of the first row to determine the number of columns\n    num_cols = len(rows[0])\n    \n    # Create a new list of lists with the same number of rows as the original and the same number of columns as the first row\n    transposed = [[None] * num_cols for _ in range(len(rows))]\n    \n    # Populate the transposed matrix\n    for i in range(num_cols):\n        for j in range(len(rows)):\n            transposed[i][j] = rows[j][i]\n    \n    return transposed\n```",
+      "input_tokens": 75,
+      "output_tokens": 134,
+      "elapsed_seconds": 4.063
+    },
+    {
+      "task_id": "T3_002",
+      "condition": "evolving",
+      "function": "transpose_rows",
+      "source": "```python\ndef transpose_rows(rows):\n    \"\"\"\n    Transpose a rectangular list of lists.\n    \n    Args:\n    rows: A list of lists representing a rectangular matrix.\n    \n    Returns:\n    A new list of lists representing the transposed matrix.\n    \"\"\"\n    # Check if the input is empty\n    if not rows:\n        return []\n    \n    # Get the number of columns in the original matrix\n    num_columns = len(rows[0])\n    \n    # Initialize an empty list to store the transposed matrix\n    transposed_matrix = [[] for _ in range(num_columns)]\n    \n    # Iterate over each row in the original matrix\n    for row in rows:\n        # Iterate over each element in the current row\n        for i, value in enumerate(row):\n            # Add the element to the corresponding column in the transposed matrix\n            transposed_matrix[i].append(value)\n    \n    return transposed_matrix\n```\n\nThis solution defines a function `transpose_rows` that takes a rectangular list of lists as input and returns its transpose. The function first checks if the input list is empty and returns an empty list if true. It then calculates the number of columns in the original matrix and initializes an empty list to store the transposed matrix. The function iterates over each row in the original matrix and each element in the current row, adding the element to the corresponding column in the transposed matrix. Finally, it returns the transposed matrix.",
+      "input_tokens": 351,
+      "output_tokens": 296,
+      "elapsed_seconds": 9.136
+    },
+    {
+      "task_id": "T3_003",
+      "condition": "frozen",
+      "function": "longest_zero_run",
+      "source": "```python\ndef longest_zero_run(values):\n    max_length = 0\n    current_length = 0\n    \n    for value in values:\n        if value == 0:\n            current_length += 1\n            max_length = max(max_length, current_length)\n        else:\n            current_length = 0\n            \n    return max_length if max_length > 0 else 0\n```",
+      "input_tokens": 74,
+      "output_tokens": 80,
+      "elapsed_seconds": 2.311
+    },
+    {
+      "task_id": "T3_003",
+      "condition": "evolving",
+      "function": "longest_zero_run",
+      "source": "```python\ndef longest_zero_run(values):\n    # Initialize variables to keep track of the current run and the maximum run found\n    current_run = 0\n    max_run = 0\n    \n    # Iterate through the values list\n    for value in values:\n        # If the current value is zero, increment the current run\n        if value == 0:\n            current_run += 1\n            # Update the maximum run if the current run is greater\n            if current_run > max_run:\n                max_run = current_run\n        else:\n            # Reset the current run to zero if the current value is not zero\n            current_run = 0\n    \n    # Return the maximum run found\n    return max_run\n\n# Example usage\nvalues = [1, 0, 0, 1, 0, 0, 1, 0]\nprint(longest_zero_run(values))  # Output: 3\n```\n\nThis solution defines a function `longest_zero_run` that takes a list of integers as input and returns the length of the longest consecutive run of zeros. It iterates through the list, tracking the current run of zeros and updating the maximum run found. The function handles edge cases such as empty lists and lists with no zeros by returning 0.",
+      "input_tokens": 350,
+      "output_tokens": 266,
+      "elapsed_seconds": 8.722
+    },
+    {
+      "task_id": "T3_004",
+      "condition": "frozen",
+      "function": "count_words",
+      "source": "```python\ndef count_words(text):\n    # Split text into words based on whitespace\n    words = text.split()\n    \n    # Convert all words to lowercase\n    words = [word.lower() for word in words]\n    \n    # Create a dictionary to store word counts\n    word_counts = {}\n    \n    # Count occurrences of each word\n    for word in words:\n        if word in word_counts:\n            word_counts[word] += 1\n        else:\n            word_counts[word] = 1\n    \n    return word_counts\n```",
+      "input_tokens": 85,
+      "output_tokens": 111,
+      "elapsed_seconds": 3.319
+    },
+    {
+      "task_id": "T3_004",
+      "condition": "evolving",
+      "function": "count_words",
+      "source": "```python\nimport re\n\ndef count_words(text):\n    # Remove punctuation and split text into words\n    words = re.findall(r'\\b\\w+\\b', text.lower())\n    \n    # Create a dictionary to store word counts\n    word_counts = {}\n    \n    # Count occurrences of each word\n    for word in words:\n        if word in word_counts:\n            word_counts[word] += 1\n        else:\n            word_counts[word] = 1\n    \n    return word_counts\n```\n\nThis Python function `count_words` takes a string `text` as input, processes it to count the occurrences of each word, and returns a dictionary with the word counts. It uses regular expressions to remove punctuation and split the text into words, ensuring that punctuation is considered part of a word. The function handles case insensitivity by converting all words to lowercase before counting them.",
+      "input_tokens": 361,
+      "output_tokens": 179,
+      "elapsed_seconds": 5.799
+    },
+    {
+      "task_id": "T3_005",
+      "condition": "frozen",
+      "function": "edges_to_adjacency",
+      "source": "```python\ndef edges_to_adjacency(n, edges):\n    adj_list = [[] for _ in range(n)]\n    for u, v in edges:\n        adj_list[u].append(v)\n    return adj_list\n```",
+      "input_tokens": 99,
+      "output_tokens": 46,
+      "elapsed_seconds": 1.717
+    },
+    {
+      "task_id": "T3_005",
+      "condition": "evolving",
+      "function": "edges_to_adjacency",
+      "source": "```python\nimport heapq\n\ndef edges_to_adjacency(n, edges):\n    # Initialize an adjacency list with empty lists for each node\n    adj_list = [[] for _ in range(n)]\n    \n    # Populate the adjacency list based on the input edges\n    for u, v in edges:\n        adj_list[u].append(v)\n    \n    return adj_list\n```\n\nThis solution defines a function `edges_to_adjacency` that takes two parameters: `n`, which is the number of nodes in the graph, and `edges`, which is a list of directed pairs representing the edges in the graph. The function initializes an adjacency list with empty lists for each node and then populates this list by iterating over the input edges and appending the destination node to the corresponding source node's list in the adjacency list. Finally, it returns the populated adjacency list.",
+      "input_tokens": 375,
+      "output_tokens": 174,
+      "elapsed_seconds": 5.07
+    },
+    {
+      "task_id": "T3_006",
+      "condition": "frozen",
+      "function": "merge_sorted_unique",
+      "source": "```python\ndef merge_sorted_unique(a, b):\n    result = []\n    i, j = 0, 0\n    \n    while i < len(a) and j < len(b):\n        if a[i] < b[j]:\n            if a[i] not in result:\n                result.append(a[i])\n            i += 1\n        elif a[i] > b[j]:\n            if b[j] not in result:\n                result.append(b[j])\n            j += 1\n        else:\n            if a[i] not in result:\n                result.append(a[i])\n            i += 1\n            j += 1\n    \n    # Append remaining elements from both lists\n    result.extend(a[i:])\n    result.extend(b[j:])\n    \n    return result\n```\n\nThis function iterates through both input lists simultaneously, comparing elements and adding them to the result list only if they are unique. It handles cases where elements are equal by ensuring that duplicates are not added multiple times. After processing all elements, it appends any remaining elements from either list to the result. This ensures that the output is an ascending-sorted list with no duplicates.",
+      "input_tokens": 78,
+      "output_tokens": 233,
+      "elapsed_seconds": 7.473
+    },
+    {
+      "task_id": "T3_006",
+      "condition": "evolving",
+      "function": "merge_sorted_unique",
+      "source": "```python\ndef merge_sorted_unique(a, b):\n    # Initialize pointers for both lists\n    i = j = 0\n    \n    # Initialize an empty list to store the result\n    result = []\n    \n    # Merge the two lists while both have elements\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            result.append(a[i])\n            i += 1\n        else:\n            result.append(b[j])\n            j += 1\n    \n    # Append any remaining elements from list 'a'\n    while i < len(a):\n        result.append(a[i])\n        i += 1\n    \n    # Append any remaining elements from list 'b'\n    while j < len(b):\n        result.append(b[j])\n        j += 1\n    \n    return result\n```\n\nThis solution defines a function `merge_sorted_unique` that takes two sorted lists of integers as input and returns a new list containing each distinct integer from both input lists, sorted in ascending order. The function uses two pointers to traverse the input lists simultaneously, comparing the current elements and appending the smaller one to the result list until all elements have been processed. This approach ensures that the resulting list contains no duplicates and is sorted.",
+      "input_tokens": 354,
+      "output_tokens": 254,
+      "elapsed_seconds": 7.617
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T2",
+  "task_set": "unseen_transfer_v1",
+  "tasks": [
+    {
+      "task_id": "T2_001",
+      "function": "group_anagrams",
+      "instruction": "Implement group_anagrams(words). Input is a list of lowercase strings. Return groups of anagrams. Words within each group must preserve input order. Groups must be ordered by the first occurrence of any member in the input.",
+      "tests": [
+        {
+          "args": [
+            [
+              "eat",
+              "tea",
+              "tan",
+              "ate",
+              "nat",
+              "bat"
+            ]
+          ],
+          "expected": [
+            [
+              "eat",
+              "tea",
+              "ate"
+            ],
+            [
+              "tan",
+              "nat"
+            ],
+            [
+              "bat"
+            ]
+          ]
+        },
+        {
+          "args": [
+            [
+              "",
+              "",
+              "a"
+            ]
+          ],
+          "expected": [
+            [
+              "",
+              ""
+            ],
+            [
+              "a"
+            ]
+          ]
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "T2_002",
+      "function": "rotate_matrix",
+      "instruction": "Implement rotate_matrix(matrix). Input is an N x N matrix represented as a list of lists. Return a NEW matrix rotated 90 degrees clockwise. Do not modify the input matrix. For an empty matrix, return an empty list.",
+      "tests": [
+        {
+          "args": [
+            [
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ]
+        },
+        {
+          "args": [
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "T2_003",
+      "function": "decode_rle",
+      "instruction": "Implement decode_rle(encoded). Input is a list of pairs [character, count], where character is a one-character string and count is a nonnegative integer. Return the decoded string. Zero counts contribute nothing.",
+      "tests": [
+        {
+          "args": [
+            [
+              [
+                "a",
+                3
+              ],
+              [
+                "b",
+                2
+              ],
+              [
+                "c",
+                1
+              ]
+            ]
+          ],
+          "expected": "aaabbc"
+        },
+        {
+          "args": [
+            [
+              [
+                "x",
+                0
+              ],
+              [
+                "y",
+                2
+              ]
+            ]
+          ],
+          "expected": "yy"
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": ""
+        }
+      ]
+    }
+  ],
+  "test_count": 9,
+  "capacity_C_measured": false
+}

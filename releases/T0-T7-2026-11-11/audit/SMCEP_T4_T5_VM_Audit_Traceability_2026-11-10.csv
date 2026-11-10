@@ -1,0 +1,13 @@
+phase,cycle,evaluation_member,expected_tests_field,completed_tests_field,condition,record_count,pass,fail,syntax_error,error,api_delivery_failed
+4,1,vm_evaluations/t4_cycle_1_audit_evaluation_v1.json,60,20,frozen,10,2,3,5,0,0
+4,1,vm_evaluations/t4_cycle_1_audit_evaluation_v1.json,60,20,evolving,10,10,0,0,0,0
+4,2,vm_evaluations/t4_cycle_2_audit_evaluation_v1.json,60,20,frozen,10,10,0,0,0,0
+4,2,vm_evaluations/t4_cycle_2_audit_evaluation_v1.json,60,20,evolving,10,6,3,0,1,0
+4,3,vm_evaluations/t4_cycle_3_audit_evaluation_v1.json,60,20,frozen,10,10,0,0,0,0
+4,3,vm_evaluations/t4_cycle_3_audit_evaluation_v1.json,60,20,evolving,10,7,0,0,3,0
+5,1,VM/t5_cycle_1_audit_evaluation_v1.json,60,20,frozen,10,7,3,0,0,0
+5,1,VM/t5_cycle_1_audit_evaluation_v1.json,60,20,evolving,10,7,3,0,0,0
+5,2,VM/t5_cycle_2_audit_evaluation_v1.json,60,20,frozen,10,10,0,0,0,0
+5,2,VM/t5_cycle_2_audit_evaluation_v1.json,60,20,evolving,10,5,0,0,0,5
+5,3,VM/t5_cycle_3_audit_evaluation_v1.json,60,20,frozen,10,10,0,0,0,0
+5,3,VM/t5_cycle_3_audit_evaluation_v1.json,60,20,evolving,10,10,0,0,0,0

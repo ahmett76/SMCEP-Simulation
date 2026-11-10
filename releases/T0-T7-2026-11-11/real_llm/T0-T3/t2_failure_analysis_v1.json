@@ -1,0 +1,22 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T2",
+  "task_id": "T2_001",
+  "failed_test": 1,
+  "frozen": {
+    "defect": "Groups sorted by anagram key instead of first input occurrence",
+    "failed_contract": "Group ordering"
+  },
+  "evolving": {
+    "defect": "Words sorted alphabetically within each group",
+    "failed_contract": "Within-group input ordering"
+  },
+  "common_failure_class": "Output ordering contract violation",
+  "behavioral_results": {
+    "frozen_pass": 8,
+    "evolving_pass": 8,
+    "tests_per_condition": 9
+  },
+  "transfer_gain_observed": false,
+  "capacity_C_measured": false
+}

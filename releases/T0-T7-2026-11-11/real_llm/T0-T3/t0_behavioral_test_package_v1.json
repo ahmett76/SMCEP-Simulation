@@ -1,0 +1,137 @@
+{
+  "experiment": "SMCEP_Open_Weight_Recursive_01",
+  "phase": "T0",
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "evaluation_type": "open_baseline_behavioral_tests",
+  "capacity_C_measured": false,
+  "records": [
+    {
+      "task_id": "T0_001",
+      "condition": "T0_baseline",
+      "function": "first_non_repeating",
+      "source": "def first_non_repeating(items):\n    from collections import Counter\n    \n    # Count occurrences of each item in the list\n    counts = Counter(items)\n    \n    # Find the first item with a count of 1\n    for item, count in counts.items():\n        if count == 1:\n            return item\n    \n    # If no unique item is found, return None\n    return None",
+      "source_sha256": "8f835a1ba07eb5d04b7fca55d2ba57798af1d1204305e5c36403eca07c91374b",
+      "tests": [
+        {
+          "args": [
+            [
+              4,
+              5,
+              4,
+              6,
+              5
+            ]
+          ],
+          "expected": 6
+        },
+        {
+          "args": [
+            [
+              1,
+              1,
+              2,
+              2
+            ]
+          ],
+          "expected": null
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": null
+        }
+      ]
+    },
+    {
+      "task_id": "T0_002",
+      "condition": "T0_baseline",
+      "function": "merge_intervals",
+      "source": "def merge_intervals(intervals):\n    if not intervals:\n        return []\n    \n    # Sort the intervals based on their start time\n    intervals.sort(key=lambda x: x[0])\n    \n    merged = [intervals[0]]\n    \n    for interval in intervals[1:]:\n        if interval[0] <= merged[-1][1]:\n            # Merge overlapping intervals\n            merged[-1][1] = max(merged[-1][1], interval[1])\n        else:\n            # Add non-overlapping interval to the result\n            merged.append(interval)\n    \n    return merged",
+      "source_sha256": "de5ed5dc8f46df623f34e6eb0662842756e6237d60d41cfe5905ca8bf83d0e23",
+      "tests": [
+        {
+          "args": [
+            [
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                8,
+                10
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              1,
+              5
+            ],
+            [
+              8,
+              10
+            ]
+          ]
+        },
+        {
+          "args": [
+            [
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                4
+              ]
+            ]
+          ],
+          "expected": [
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "args": [
+            []
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "T0_003",
+      "condition": "T0_baseline",
+      "function": "longest_unique_substring",
+      "source": "def longest_unique_substring(s):\n    if not s:\n        return 0\n    \n    start = 0\n    max_length = 0\n    char_index_map = {}\n    \n    for end in range(len(s)):\n        if s[end] in char_index_map and char_index_map[s[end]] >= start:\n            start = char_index_map[s[end]] + 1\n        \n        char_index_map[s[end]] = end\n        max_length = max(max_length, end - start + 1)\n    \n    return max_length",
+      "source_sha256": "6a54b0880e291bf5c2c09f0222764539d84c2174754916873536061f6fde6ceb",
+      "tests": [
+        {
+          "args": [
+            "abcabcbb"
+          ],
+          "expected": 3
+        },
+        {
+          "args": [
+            "bbbbb"
+          ],
+          "expected": 1
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": 0
+        }
+      ]
+    }
+  ]
+}

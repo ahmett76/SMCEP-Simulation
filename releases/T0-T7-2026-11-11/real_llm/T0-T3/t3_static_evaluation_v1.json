@@ -1,0 +1,103 @@
+{
+  "phase": "T3",
+  "source_file": "t3_model_outputs_v1.json",
+  "source_sha256": "5f93d8214872dfaf821d020b4d2fda1ab9b2f4c9e41aa1c65fcd2501695ce112",
+  "records": [
+    {
+      "task_id": "T3_001",
+      "condition": "frozen",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "T3_001",
+      "condition": "evolving",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "T3_002",
+      "condition": "frozen",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "T3_002",
+      "condition": "evolving",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "T3_003",
+      "condition": "frozen",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "T3_003",
+      "condition": "evolving",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "T3_004",
+      "condition": "frozen",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "T3_004",
+      "condition": "evolving",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "T3_005",
+      "condition": "frozen",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "T3_005",
+      "condition": "evolving",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "unterminated string literal (detected at line 15) (<unknown>, line 15)"
+    },
+    {
+      "task_id": "T3_006",
+      "condition": "frozen",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "T3_006",
+      "condition": "evolving",
+      "raw_syntax_valid": false,
+      "expected_function_present": false,
+      "markdown_fence_present": true,
+      "syntax_error": "invalid syntax (<unknown>, line 1)"
+    }
+  ]
+}
