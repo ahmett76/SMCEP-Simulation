@@ -38,10 +38,13 @@ SMCEP-Simulation/
 │   ├── smcep_v08/
 │   ├── smcep_v09/
 │   └── smcep_v10/
-└── interviews/
-    ├── LLM_Interview_Questionnaire.md
-    ├── LLM_Interview_Q9_Responses.md
-    └── SMCEP_Q9_18_responses_coding.csv
+├── LLM_Interview_Questionnaire.md
+├── LLM_Interview_Q9_Responses.md
+├── SMCEP_Q9_18_responses_coding.csv
+├── SMCEP_Figure_2_clean.png
+├── SMCEP_Figure_3_clean.png
+├── SMCEP_Synthetic_vs_RealLLM_evidence_2026-11-11.png
+└── releases/T0-T7-2026-11-11/
 ```
 
 The directory structure distinguishes the historical v0.5 model from the later synthetic pilots.
@@ -130,13 +133,13 @@ The ninth question (Q9) invited each model to formulate an additional scientific
 
 ### Interview Materials
 
-The following materials are available in the [`interviews/`](interviews/) directory:
+The following materials are available at the repository root:
 
 | File | Description |
 |---|---|
-| [`LLM_Interview_Questionnaire.md`](interviews/LLM_Interview_Questionnaire.md) | Original interview instructions and nine-question template. |
-| [`LLM_Interview_Q9_Responses.md`](interviews/LLM_Interview_Q9_Responses.md) | Responses to Q9 from all 18 interview sessions, organized by model and session. |
-| [`SMCEP_Q9_18_responses_coding.csv`](interviews/SMCEP_Q9_18_responses_coding.csv) | Session-level thematic coding data supporting the reported Q9 analysis. |
+| [`LLM_Interview_Questionnaire.md`](LLM_Interview_Questionnaire.md) | Original interview instructions and nine-question template. |
+| [`LLM_Interview_Q9_Responses.md`](LLM_Interview_Q9_Responses.md) | Responses to Q9 from all 18 interview sessions, organized by model and session. |
+| [`SMCEP_Q9_18_responses_coding.csv`](SMCEP_Q9_18_responses_coding.csv) | Session-level thematic coding data supporting the reported Q9 analysis. |
 
 ### Analytical Scope
 
@@ -147,6 +150,14 @@ The released materials provide the original interview questionnaire, the 18 Q9 r
 The interviews contribute qualitative perspectives on the conceptual and governance questions raised by SMCEP. They are not controlled experiments demonstrating the operational capabilities, internal states, or recursive self-improvement of the interviewed models.
 
 The thematic analysis is exploratory, and independent inter-coder reliability assessment has not been conducted.
+
+## T0–T7 evidence release and figure assets
+
+The dated [T0–T7 evidence release](releases/T0-T7-2026-11-11/README.md) documents distinct experimental regimes. The T4–T5 VM audit records contain 94 PASS statuses among 120 recorded statuses; these are not 120 independent experimental replications. Some legacy T4–T5 VM JSON records retain the metadata field `phase=T3` despite belonging to later audit stages. This is a provenance label, not evidence that the stages were identical; original records are preserved unchanged.
+
+Figures used to explain the prospective measurement protocol and distinguish synthetic from real-LLM audit evidence are available as [Figure 2](SMCEP_Figure_2_clean.png), [Figure 3](SMCEP_Figure_3_clean.png), and [Figure 4](SMCEP_Synthetic_vs_RealLLM_evidence_2026-11-11.png).
+
+Historical SMCEP17 LaTeX files in the dated release are retained as historical artifacts, **not** as the current SMCEP 21 manuscript source. The current manuscript is maintained separately as a PDF/preprint; this repository does not distribute a current LaTeX source. No complete real-LLM recursive-improvement demonstration is claimed.
 
 ## Scientific Scope and Limitations
 
